@@ -5,12 +5,12 @@
 
 using namespace std;
 
-class modShifr {
+class modCipher {
     private:
         int key;
     public:
-        modShifr()=delete;
-        modShifr(int skey);
+        modCipher()=delete;
+        modCipher(int skey);
         string encrypt(string &text);
         string decrypt(string &text);
 };
