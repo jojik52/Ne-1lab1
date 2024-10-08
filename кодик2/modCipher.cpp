@@ -1,13 +1,13 @@
-#include <modCipher.h>
+#include "modAlphaCipher.h"
 
-modShifr::modShifr(int skey) {
+modCipher::modCipher(int skey) {
     key=skey;
 }
 
-string modShifr :: encrypt(string &text) {
+string modCipher :: encrypt(string &text) {
     int k=0;
     int simvoli=text.size();
-    int stroki=((simvoli-1)/key)+1;
+    int stroki=((simvoli)/key);
     char** tabl=new char*[stroki];
     for (int i=0; i<stroki; i++)
         tabl[i]=new char[key];
@@ -27,10 +27,10 @@ string modShifr :: encrypt(string &text) {
     return text;
 }
 
-string modShifr :: decrypt(string &text) {
+string modCipher :: decrypt(string &text) {
     int k=0;
     int simvoli=text.size();
-    int stroki=((simvoli-1)/key)+1;
+    int stroki=((simvoli)/key);
     char** tabl=new char*[stroki];
     for (int i=0; i<stroki; i++)
         tabl[i]=new char[key];
