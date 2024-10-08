@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <modCipher.h>
+#include "modAlphaCipher.h"
 
 bool isValid(const int k, string &text) {
     int razm=text.size();
@@ -22,9 +22,9 @@ int main() {
         return 1;
     }
     cout<<"Ключ загружен\n";
-    modShifr shifr(key);
+    modCipher shifr(key);
     do {
-        cout << "Шифратор готов. Выберите опрецию (Выход-0, Шифрока-1, Расшифровка-2): ";
+        cout << "Шифратор готов. Выберите опрецию (Выход-0, Шифровка-1, Расшифровка-2): ";
         cin >> vibor;
         if (vibor > 2) {
             cout << "Неверная операция!\n" << endl;
@@ -37,3 +37,5 @@ int main() {
     } while (vibor != 0);
     return 0;
 }
+
+
