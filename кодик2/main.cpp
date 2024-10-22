@@ -13,21 +13,21 @@ int main() {
     string text;
     int key;
     unsigned vibor;
-    cout << "Введите текcт: ";
+    cout << "Enter text: ";
     cin >> text;
-    cout << "Введите кол-во столбцов: ";
+    cout << "Enter the number of columns: ";
     cin >> key;
     if (!isValid(key, text)) {
-        cout << "Ключ не корректен\n";
+        cout << "The key is not correct\n";
         return 1;
     }
-    cout<<"Ключ загружен\n";
+    cout<<"Key loaded\n";
     modCipher shifr(key);
     do {
-        cout << "Шифратор готов. Выберите опрецию (Выход-0, Шифровка-1, Расшифровка-2): ";
+        cout << "The encoder is ready. Select option (Output-0, Encryption-1, Decryption-2): ";
         cin >> vibor;
         if (vibor > 2) {
-            cout << "Неверная операция!\n" << endl;
+            cout << "Incorrect operation!\n" << endl;
         } else if (vibor > 0) {
             if (vibor == 1)
                 cout << shifr.encrypt(text) << endl;
